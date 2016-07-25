@@ -1,0 +1,377 @@
+.my-account{
+        padding:15px 10px 10px 10px;
+        cursor: pointer;
+            color: #FFC400;
+    font-family: Comfortaa_r;
+    font-size: 18px;
+    text-decoration: underline;
+        
+}
+.my-account-body{
+    background-color: rgba(0,0,0,0.8);
+    /* background-color: white; */
+    padding: 5px;
+}
+.my-account-title{
+    /*margin: 0px;*/
+    line-height: 0px;
+}
+.myAccountClose{
+    background-color: #d50000 !important;
+}
+.my-account-box{
+    width: 800px;
+    /* top: 0; */
+    margin: auto;
+    background-color: rgba(0,0,0,0.95) !important;
+}
+.my-account-dialog{
+    /*display:none;*/
+    color: white;
+}
+
+.your-events{
+    border: 2px solid #4E342E;
+    border-radius: 3px;
+    margin:3px;
+    font-size: 15px;
+    font-family: Comfortaa_r;
+    font-weight: normal;
+    color: #8E24AA;
+}
+.your-events .event-date{
+    color:#004D40;
+    font-size: 12px;
+}
+.my-account-header{
+        padding: 15px;
+    height: 60px;    
+    background-color: rgba(0,0,0,0.9) !important;
+}
+.nav-pills > li > a {
+    border-radius: 0;
+    border-top: 3px solid transparent;
+    color: #42A5F5 !important;
+}
+.nav-pills > li.active > a {
+    font-weight: 600;
+    color: white !important;
+}
+.modal-success .modal-header, .modal-success .modal-footer {
+    border-color: black;
+}
+.modal-body {
+    background-color: rgba(0,0,0,0.8) !important;
+}
+.modal-success .modal-body {
+    background-color: rgba(0,0,0,0.8) !important;
+}
+.header{
+    text-align: center !important;
+    position: relative;
+        width: 106%;
+}
+.your-events img{
+    display:inline;    
+}
+.no-events{
+    color: #f44336;
+    font-weight: 700;
+    padding: 10px;
+}
+.btn:hover, .btn:focus {
+    color: red !important;
+    text-decoration: none;
+}
+.btn-remove{
+    background-color: #ffffff;
+    padding: 1px 2px 0px 4px !important;
+}
+
+.venue_img{
+    margin-bottom: 10px;
+    /*box-shadow: 3px 3px 5px;*/
+}
+.venue-category{
+    font-size: 10px;
+    font-weight: bold;
+    color:#1565C0;
+    margin-left:5px;
+}
+
+.venue-status-na{
+    color:#D7CCC8;
+    font-size:12px;
+}
+
+.btn_add_me{
+    float:right;
+}
+
+.stat-table{
+    width:100%;
+}
+
+.stat-table tr td{
+    text-align: center;
+}
+.stat-sub{
+    font-size:10px;
+    text-align: center;
+    font-family: Comfortaa_r;
+}
+
+.stat-number{
+    font-size:16px;
+    font-weight:700;
+    text-align: center;
+    font-family:Comfortaa_r;
+}
+.right-float{
+    float:right;
+}
+.cust-table{
+    width:100%;
+}
+
+.map-icon{
+    margin:auto;
+}
+
+.rating{
+    margin-left: 10px;
+    background-color: #4CAF50;
+    padding: 6px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 700;
+}
+
+.footer-table{
+    width:100%;
+}
+
+.footer-table tr  .left{
+    text-align: left;
+}
+.footer-table tr  .right{
+    text-align: right;
+}
+.footer-table tr  .center{
+    text-align: center;
+}
+
+.explore{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    overflow-y: scroll;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 99;
+}
+.explore-button-text{
+        text-shadow: 1px 1px 3px #757575;
+        font-family: 'Steiner';
+        font-size:16px;
+        cursor: pointer;
+        font-weight: 700;
+        margin:0px;
+    
+}
+.modal{
+    overflow-y: auto !important;
+}
+
+.slides li{
+    display:block !important;
+}
+.venue-photos{
+    margin-bottom: 25px;
+    border:1px solid white;
+}
+
+.no-scroll{
+    overflow:hidden;
+}
+.explore-close{
+    margin-right:10px;
+    padding: 8px;
+    color:#ff751a;
+}
+.explore-venue{
+    font-size: 25px;
+    font-weight: 700;
+    padding: 15px 15px 15px 15px;
+    font-family: Comfortaa_r;
+    color: #8E24AA;
+}
+.explore-venue a{
+    color: #8E24AA;
+}
+.explore-venue .venue-category{
+    color: #2196F3;
+}
+.explore-address{
+    color:white;
+    font-size: 11px;
+    font-weight: 300;
+}
+.explore-map{}
+
+.explore-row{
+    width:100%;
+    margin-bottom:10px;
+    position:fixed;
+    top:0px;
+    z-index: 99;
+    background-color: rgba(0,0,0,0.9);
+}
+.explore-map-icon{
+    float:none;
+    display:inline;
+}
+.explore-images{
+    margin-top:65px;
+}
+
+.price-range{
+    font-weight: 700;
+
+}
+.tip-image{
+    display:inline;
+    width:5%;
+}
+
+.tip-box{
+    color:#424242;
+    font-size:12px;
+    text-align: justify;
+}
+.venue-address-top{
+    font-size: 11px;
+    color: #757575;
+}
+
+.venue-closed{
+    color:#f44336;
+    font-weight: 700;
+    font-family:Comfortaa_r;
+    text-align:center;
+    padding:0;
+    margin:0;
+    
+}
+
+.venue-open{
+    color:#4CAF50;
+    font-weight: 700;
+    font-family:Comfortaa_r;
+    text-align:center;
+    padding:0;
+    margin:0;
+}
+.venue-status{
+    color:#00796B;
+    font-size:10px;
+    text-align:center;
+}
+
+.venue-status-na{
+    font-size:10px;
+    text-align:center;
+}
+
+.here-now{
+    font-family: duepuntozero_r;
+    margin:0;
+    padding:0;
+}
+.center{
+    align:center;
+    text-align:center;
+}
+.center tr td{
+    align:center;
+    text-align:center;
+}
+.box-header .box-title {
+    font-size: 18px;
+    font-family: Comfortaa_r;
+    font-weight: normal;
+    color: #8E24AA;
+}
+.button_explore{
+    background:#795548 !important;
+}
+.button_add{
+    background: #388E3C !important;
+}
+.button_close{
+    background:#d50000 !important;
+    margin:10px !important;
+}
+.logo{
+    margin:auto;
+}
+@media screen and (max-width: 699px) and (min-width: 0px) {
+    .explore-images{
+        margin-top:135px !important;
+    }
+    .explore-row {
+        width: 94% !important;
+    }
+}
+
+/*----------------------------------*/
+.mdl-card__supporting-text{
+    width:100%;
+}
+.demo-card-square.mdl-card {
+  width: 100%;
+  height: 500px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  /*background:*/
+    /*url('https://irs3.4sqi.net/img/general/400x400/31094897_uux_QVTy-tyt8FpCryv0t913nbOi_xUtv1AvNhVQOEU.jpg') bottom right 15% no-repeat #46B6AC;*/
+}
+.here-now-table { table-layout: fixed; }
+.here-now-table td { width: 33%; }
+
+.box.box-success {
+    border: 0px;
+}
+.mdl-card__supporting-text{
+    width:100% !important;
+}
+.mdl-card__supporting-text .box-title {
+    font-size: 18px;
+    font-family: Comfortaa_r;
+    font-weight: normal;
+    color: #8E24AA;
+}
+
+/*------------------*/
+
+.mdl-card__supporting-text{
+    width:100%;
+}
+.event-card-square.mdl-card {
+    width: 320px;
+    height: 320px;
+    float: left;
+    margin: 5px 30px 5px 30px;
+}
+.event-card-square > .mdl-card__title {
+  color: #fff;
+  /*background:*/
+    /*url('https://irs3.4sqi.net/img/general/400x400/31094897_uux_QVTy-tyt8FpCryv0t913nbOi_xUtv1AvNhVQOEU.jpg') bottom right 15% no-repeat #46B6AC;*/
+}
+.panel{
+    background-color: rgba(0,0,0,0.7) !important;
+}

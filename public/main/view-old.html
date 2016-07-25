@@ -1,0 +1,236 @@
+
+<div class = "row" ng-show="userInfo">
+    <div class="col-md-offset-1 col-md-10">
+        <p class="my-account pull-right" ng-click="toggleMyAccount()">{{userInfo.username}}</p>
+    </div>
+</div>
+<div class="row">
+    <!--<div class="col-md-3"></div>-->
+    <div class="col-md-12">
+        <div class="modal modal-success alertBox" ng-show="userInfo">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Added <span class="glyphicon glyphicon-ok"></span></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>You just added {{alertBox}} to your events</p>
+                        <p><button class="btn btn-outline viewAll"> Click to view all events</button> <button class="btn btn-danger myAccountClose"> Close</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal my-account-box modal-success events">
+            <div class="my-account-dialog">
+                <div class="my-account-content">
+                    <div class="my-account-header">
+                        <h4 class="my-account-title pull-left">Your nightlife </h4>
+                        <!--<button class="btn btn-danger myAccountClose pull-right"> Close</button>-->
+                        <button class="myAccountClose pull-right mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                          Close
+                        </button>
+                        <!--<button class="myAccountClose pull-right button_close mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">-->
+                        <!--    <i class="material-icons">close</i>-->
+                        <!--</button>-->
+                    </div>
+                    
+                    <!--<div class="modal-body">-->
+                    <!--    <p ng-if="myEvents.length === 0">No Events</p>-->
+                    <!--    <div class="repeats" ng-repeat="event in myEvents">-->
+                    <!--        <div>-->
+                    <!--            <img class="img-responsive" ng-src="{{event.imgUrl}}">&nbsp{{event.place}} {{event.venueAddress}} {{event.date}} -->
+                    <!--            <button ng-click="removeMe(event.eventId)" class="btn btn-outline"> Remove Me <span class="glyphicon glyphicon-remove"></span></button>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--    <button class="btn btn-danger modalClose"> Close</button>-->
+                    <!--</div>-->
+                    
+                    <div class="my-account-body">
+                        <div class="view-events" >
+                            <section >
+                                <ul class="nav nav-pills">
+                                    <li ng-class="{active:currentTab(1)}">
+                                        <a href ng-click="setTab(1)" title="Going to..">Today</a>
+                                    </li>
+                                    <li ng-class="{active:currentTab(2)}">
+                                        <a href ng-click="setTab(2)" title="Went to..">All</a>
+                                    </li>
+                                </ul>
+                                <div class="panel" ng-show="currentTab(1)">
+                                    <p class="no-events" ng-if="currentEvents.length === 0">No Events</p>
+                                    <div class="repeats" ng-repeat="event in currentEvents">
+                                        <div class="your-events ">
+                                            <img class="img-responsive" ng-src="{{event.imgUrl}}">&nbsp{{event.place}}, <span class="venue-category">{{event.venueAddress}}</span> <span class="event-date">{{event.date}}</span> 
+                                            <button ng-click="removeMe(event.eventId)" title="Remove" class="btn btn-remove pull-right"> <span class="glyphicon glyphicon-remove"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel" ng-show="currentTab(2)">
+                                    <p class="no-events" ng-if="myEvents.length === 0">No Events</p>
+                                    <div class="repeats" ng-repeat="event in myEvents">
+                                        <div class="your-events">
+                                            <img class="img-responsive" ng-src="{{event.imgUrl}}">&nbsp{{event.place}}, <span class="venue-category">{{event.venueAddress}}</span> <span class="event-date">{{event.date}}</span>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+<div class="row">
+    <div class="fl col-md-offset-3 col-md-6">
+        <form class="form-group form-search" ng-submit="submit(location)" novalidate>
+            <div class="header text-center"><img class="img-responsive pull-center logo" width="10%" src="./img/logo.png"></div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input ng-model="location" type="text" class="form-control" placeholder="Enter your City...." autofocus required>
+                  <span class="input-group-btn">
+                      <button class="btn btn-info btn-flat">Search</button>
+                  </span>
+            </div>
+        </form>
+        <button ng-click="login()" ng-hide="loggingIn" class="btn btn-flat btn-social btn-github center-block" data-toggle="tooltip" data-placement="right" title="This shows because you arent logged in">
+            <i class="fa fa-github"></i> Sign in with GitHub</button>
+        <div class="loader" ng-include="'main/poi.html'">
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="results" style="margin-top:-150px;">
+        <div class="container">
+            <div class="row"  ng-repeat="rows in events">
+                <div class="col-md-4" ng-repeat="items in rows">
+                <div class="box box-success" style="border-radius:0px" >
+                    <div class="box-header with-border">
+                        <img class="venue_img img-responsive" ng-src='{{ifEmpty(items.venue.photos.groups[0].items[0].prefix,"img_part_1")+"400x400"+ifEmpty(items.venue.photos.groups[0].items[0].suffix,"img_part_2")}}' width=""/>
+                        <a href="{{items.venue.url}}" target="_blank"><b class="box-title">{{items.venue.name}}<span class="venue-category">{{items.venue.categories[0].shortName}}</span></b></a>&nbsp&nbsp
+                        <em class="price-range" ng-repeat="i in getTier(items.venue.price.tier) track by $index">{{items.venue.price.currency}}</em>
+                        <span class="rating pull-right">{{ifEmpty(items.venue.rating,'rating') | formatNumber}}</span>
+                        <br>
+                        <em class="pull-left venue-address-top" >{{items.venue.location.address}}</em>
+                    </div>
+                    <div class="box-header " >
+                        <table class="center" align="center" width="100%">
+                            <tr>
+                                <td>
+                                    <p class="here-now">{{items.venue.hereNow.summary}} </p>
+                                </td>
+                                <td>
+                                    <a target="_blank" href="http://maps.google.com/?q={{sanitize(items.venue.name)+','+sanitize(items.venue.location.address)+','+items.venue.location.city}}">
+                                        <img class="map-icon img-responsive" title="{{items.venue.location.address}}" src="./img/map.png" >
+                                    </a>
+                                </td>
+                                <td>
+                                    <table class="center" align="center">
+                                        <tr>
+                                            <td>
+                                                <p class=" venue-closed" ng-if="!items.venue.hours.isOpen">Closed</p>
+                                    <p class=" venue-open" ng-if="items.venue.hours.isOpen">Open</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <em class=" venue-status" ng-if="ifEmpty(items.venue.hours.status,'status') != 1">{{items.venue.hours.status}}</em>
+                                    <em class=" venue-status-na" ng-if="ifEmpty(items.venue.hours.status,'status') == 1">Current Status N/A</em>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="box-body tip-box">
+                        <img class="img-responsive tip-image" title="top-tip" src="./img/tip.png"> "{{items.tips[0].text}}" ({{items.venue.stats.tipCount}} tips)
+                    </div>
+                    <div class="box-body">
+                            <table class="footer-table">
+                                <tr>
+                                    <td class="center explore-button" >
+                                        <button ng-click="explore(items.venue)" class="button_explore mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                                          <i class="material-icons">view_carousel</i>
+                                        </button></td>
+                                    <td class="center">
+                                        <table align="center">
+                                            <tr>
+                                                <td class="stat-number">{{items.venue.stats.checkinsCount}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="stat-sub">Check Ins</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="center">
+                                        <button ng-click="addMe($index)" class="button_add mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                                             <i class="material-icons">add</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container explore" ng-if="exploreFlag">
+    <div class="row explore-row">
+        <div class="col-md-8 explore-venue">
+            <a href="{{venue.url}}" target="_blank">{{venue.name}}</a><span class="venue-category">{{venue.categories[0].shortName}}</span>
+            <span class="explore-address">{{venue.location.address}}, {{venue.location.city}} <a target="_blank" href="http://maps.google.com/?q={{sanitize(venue.name)+','+sanitize(venue.location.address)+','+venue.location.city}}"><img class="explore-map-icon img-responsive" title="{{venue.location.address}}" src="./img/map.png" width="3%"></a></span>
+        </div>
+        <div class="col-md-4">
+            <!--<p class="pull-right explore-close" ng-click="exploreClose()">CLOSE</p>-->
+            <button ng-click="exploreClose()" class="pull-right button_close mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                <i class="material-icons">close</i>
+            </button>
+        </div>
+    </div>
+    <div class="row explore-images">
+        <div class="col-md-3" ng-repeat="photo in photos">
+            <img class="img-responsive venue-photos" ng-src='{{photo.prefix+"400x400"+photo.suffix}}'>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!--<p class="pull-right close-button" ng-click="exploreClose()">CLOSE</p>-->
+            <button ng-click="exploreClose()" class="pull-right button_close mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                <i class="material-icons">close</i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!--<div class="box-header " >-->
+<!--                        <em class="pull-left venue-status" ng-if="ifEmpty(items.venue.hours.status,'status') != 1">{{items.venue.hours.status}}</em>-->
+<!--                        <em class="pull-left venue-status-na" ng-if="ifEmpty(items.venue.hours.status,'status') == 1">Current Status N/A</em>-->
+<!--                        <em class="pull-right venue-closed" ng-if="!items.venue.hours.isOpen">Closed</em>-->
+<!--                        <em class="pull-right venue-open" ng-if="items.venue.hours.isOpen">Open</em>-->
+<!--                        <table align="center">-->
+<!--                            <tr>-->
+<!--                                <td>-->
+<!--                                    <em class="pull-right venue-closed" ng-if="!items.venue.hours.isOpen">Closed</em>-->
+<!--                        <em class="pull-right venue-open" ng-if="items.venue.hours.isOpen">Open</em>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td>-->
+<!--                                    <em class="pull-left venue-status" ng-if="ifEmpty(items.venue.hours.status,'status') != 1">{{items.venue.hours.status}}</em>-->
+<!--                        <em class="pull-left venue-status-na" ng-if="ifEmpty(items.venue.hours.status,'status') == 1">Current Status N/A</em>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                        </table>-->
+<!--                    </div>-->
+
+<!-- Square card -->

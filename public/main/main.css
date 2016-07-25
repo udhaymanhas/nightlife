@@ -1,0 +1,35 @@
+body{
+    background-image:url(../img/sz_final-grayscale.jpg) !important;
+    background-repeat: repeat-x !important;
+    background-size:cover !important;
+    background-attachment: fixed !important;
+}
+.loader{
+    display: none;
+}
+.footer {
+    text-align: center;
+    position: relative;
+    padding-top: 50px;
+    margin-top: 150px;
+    color: #fff;
+}
+.header{
+    font-family: 'Gloria Hallelujah', cursive;
+    color:#fff;
+    font-size:30px;
+    text-transform: uppercase;
+    background-color: rgba(0,0,0,0.8);
+    padding:10px;
+}
+.form-search{
+    position: relative;
+    margin-top: 250px;
+}
+.box-header .box-title{
+    font-size: 16px;
+    font-family: Comfortaa_r;
+}
+.navbar-text {
+    margin-left: 15px;
+}

@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Steiner';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Steiner'),  url('../fonts/Steinerlight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'duepuntozero_r';
+  font-style: normal;
+  src: local('duepuntozero_r'),  url('../fonts/duepuntozero_regular.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Comfortaa_r';
+  font-style: normal;
+  src: local('Comfortaa_r'),  url('../fonts/Comfortaa-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'eurof56';
+  font-style: normal;
+  src: local('eurof56'),  url('../fonts/eurof56.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'asenst';
+  font-style: normal;
+  src: local('asenst'),  url('../fonts/ASENT___.ttf') format('truetype');
+}
